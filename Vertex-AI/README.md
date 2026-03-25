@@ -76,6 +76,10 @@ cp .env.example .env
 python src/app.py
 # Или:
 python -m uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload
+
+# 7. Запуск фронтенда (отдельный терминал)
+cd frontend
+python -m http.server 3000
 ```
 
 #### Способ 2: Docker
@@ -89,7 +93,3 @@ docker-compose down
 ```
 
 
-
-# 7. Запуск фронтенда (отдельный терминал)
-cd frontend
-python -m http.server 3000
