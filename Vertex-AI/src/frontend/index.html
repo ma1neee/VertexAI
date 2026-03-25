@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex — Финансовый анализ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Vertex</h1>
+            <p>AI-агент для анализа финансовой отчетности</p>
+        </header>
+
+        <section class="upload-section">
+            <div class="file-input-wrapper">
+                <input type="file" id="pdfFile" accept=".pdf">
+                <label for="pdfFile" class="file-label">📎 Выберите PDF файл</label>
+            </div>
+            <button onclick="analyzeFile()" class="analyze-btn">🔍 Анализировать</button>
+        </section>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>🔄 Анализируем документ...</p>
+            <p class="loader-hint">Это может занять 1-2 минуты</p>
+        </div>
+
+        <div id="error" class="hidden"></div>
+
+        <div id="results" class="hidden">
+            <div class="score-card">
+                <h2>📊 Инвестиционный скоринг</h2>
+                <div class="score-circle" id="scoreValue">0</div>
+                <div class="score-label" id="scoreLabel">-</div>
+            </div>
+
+            <div class="card">
+                <h3>💰 Ключевые показатели</h3>
+                <table id="metricsTable">
+                    <thead>
+                        <tr><th>Показатель</th><th>Значение</th><th>Единицы</th><th>Год</th><th>Уверенность</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>📈 Коэффициенты</h3>
+                    <table id="ratiosTable">
+                        <thead>
+                            <tr><th>Коэффициент</th><th>Значение</th><th>Категория</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="card">
+                    <h3>🧠 NLP Анализ</h3>
+                    <div id="nlpSummary" class="nlp-summary"></div>
+                    <h4>⚠️ Риски</h4>
+                    <ul id="risksList" class="risks-list"></ul>
+                    <h4>💡 Возможности</h4>
+                    <ul id="opportunitiesList" class="opportunities-list"></ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>💡 Рекомендации</h3>
+                <ul id="recsList" class="recommendations-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
