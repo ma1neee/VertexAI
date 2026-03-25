@@ -53,7 +53,7 @@
 
 ```bash
 # 1. Клонирование репозитория
-git clone https://github.com/ВАШ_НИК/vertex.git
+git clone https://github.com/ma1neee/VertexAI.git
 cd vertex
 
 # 2. Создание виртуального окружения
@@ -76,6 +76,19 @@ cp .env.example .env
 python src/app.py
 # Или:
 python -m uvicorn src.app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+#### Способ 2: Docker
+
+```
+# Сборка и запуск контейнеров
+docker-compose up --build
+
+# Остановка
+docker-compose down
+```
+
+
 
 # 7. Запуск фронтенда (отдельный терминал)
 cd frontend
